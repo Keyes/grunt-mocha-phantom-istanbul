@@ -12,6 +12,13 @@
 
 'use strict';
 
+// Additions for phantomjs2
+if (!phantom.args) {
+  var system = require('system');
+  phantom.args = system.args;
+  phantom.args.shift();
+}
+
 var fs = require('fs');
 var _ = require('lodash');
 
